@@ -7,6 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringIn10StepsApplication {
 
 	public static void main(String[] args) {
+		
+		BinarySearchImpl binarySearch = new BinarySearchImpl();
+		int result = binarySearch.binarySearch(new int[] {12,4,6}, 3);
+		System.err.println("result:"+result);
 		SpringApplication.run(SpringIn10StepsApplication.class, args);
 	}
 
