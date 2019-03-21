@@ -77,6 +77,18 @@ public class SpringIn10StepsApplication {
 		 * 
 		 * now algorithm being used is bubble sort ,So how do I change it to use
 		 * QuickStart. And how can I do that dynamically?
+		 * 
+		 * if we put @component for QuickSortAlgorithm class so when spring try to
+		 * create bean from SortAlgorithm it will find two beans that can be of type
+		 * SortAlgorithm so spring will throw exception of type
+		 * NoUniqueBeanDefinitionException and says that "expected single matching bean
+		 * but found 2: bubbleSortAlgorithm,quickSortAlgorithm" to solve this you need
+		 * to use @primary annotation to give priority to the important Bean you want to
+		 * create first.
+		 * 
+		 * If you have more than one component matching a specific type. You can use
+		 * 
+		 * @primary with @component to give more importance to one of those components.
 		 */
 
 		ConfigurableApplicationContext applicationContext = SpringApplication.run(SpringIn10StepsApplication.class,
