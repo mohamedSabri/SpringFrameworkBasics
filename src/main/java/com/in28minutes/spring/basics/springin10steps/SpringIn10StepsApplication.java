@@ -8,7 +8,10 @@ public class SpringIn10StepsApplication {
 
 	public static void main(String[] args) {
 		
-		BinarySearchImpl binarySearch = new BinarySearchImpl();
+		// sortAlgorithm is dependency for 
+		BinarySearchImpl binarySearch = new BinarySearchImpl(new QuickSortAlgorithm());
+		
+//		BinarySearchImpl binarySearch = new BinarySearchImpl(new BubbleSortAlgorithm());
 		int result = binarySearch.binarySearch(new int[] {12,4,6}, 3);
 		System.err.println("result:"+result);
 		SpringApplication.run(SpringIn10StepsApplication.class, args);
